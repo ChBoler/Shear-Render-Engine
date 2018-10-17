@@ -49,7 +49,7 @@ func _draw():
 	
 	var _array = [Vector2(0, 0), Vector2 (100, 0), Vector2 (100, 100), Vector2(0, 100)]
 	var _colorarray = [Color("FFFFFF"), Color("FFFFFF"), Color("FFFFFF"), Color("FFF11F")]
-	var _uvs = [Vector2(0,0),Vector2(1,0),Vector2(1,1),Vector2(0,1)]  #no idea
+	var _uvs = [Vector2(0, 0), Vector2(637, 0), Vector2(637, 637), Vector2(0, 637)]  #no idea
 	var _texture = load("res://Textures/TestImage.PNG")
 	
 	draw_polygon(_array, _colorarray, _uvs, _texture)
