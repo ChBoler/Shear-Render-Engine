@@ -75,8 +75,8 @@ func _draw():
 	var worldPosition = Vector2(0, 0)
 	
 	var blockWidth = 100
-	var blockHeight = 20
-	var blockDepth = 75
+	var blockHeight = 75
+	var blockDepth = 50
 	
 	# =============== Front Face ===============
 	
@@ -96,7 +96,7 @@ func _draw():
 	var fpointArray = [topLeftPoint, topRightPoint, botRightPoint, botLeftPoint]
 	
 	# THING GETS DRAWN HERE
-	#draw_polygon(fpointArray, _colorarray, _uvs, _texture)
+	draw_polygon(fpointArray, _colorarray, _uvs, _texture)
 	
 	# ====== Math Setting Stage ======
 	# x3 = (((y1 − y3) / slope) - x1) * -1   where...
@@ -110,8 +110,8 @@ func _draw():
 	#var test2 = ((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
 	#var test = topLeftY − vanishY / leftSlope - topLeftX * -1
 	# TODO - put this in a method to find the damn point
-	var leftMathPoint = Vector2((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
-	var rightMathPoint = Vector2((((topRightY - vanishY) / rightSlope) - topRightX) * -1, topRightY - blockDepth)
+	var rightMathPoint = Vector2((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
+	var leftMathPoint = Vector2((((topRightY - vanishY) / rightSlope) - topRightX) * -1, topRightY - blockDepth)
 
 	var tpointArray = [topLeftPoint, leftMathPoint, rightMathPoint, topRightPoint]
 	
