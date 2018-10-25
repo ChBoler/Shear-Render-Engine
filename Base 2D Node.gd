@@ -91,12 +91,12 @@ func _draw():
 	var topLeftPoint = Vector2(topLeftX, topLeftY)
 	
 	var botRightPoint = Vector2(midWidth + (blockWidth / 2), midHeight + (blockHeight / 2))
-	var botLeftPoint = Vector2(midWidth - (blockWidth / 2), midHeight + (blockHeight / 2)))
+	var botLeftPoint = Vector2(midWidth - (blockWidth / 2), midHeight + (blockHeight / 2))
 	
 	var fpointArray = [topLeftPoint, topRightPoint, botRightPoint, botLeftPoint]
 	
 	# THING GETS DRAWN HERE
-	draw_polygon(fpointArray, _colorarray, _uvs, _texture)
+	#draw_polygon(fpointArray, _colorarray, _uvs, _texture)
 	
 	# ====== Math Setting Stage ======
 	# x3 = (((y1 − y3) / slope) - x1) * -1   where...
@@ -107,26 +107,28 @@ func _draw():
 	var rightSlope = (vanishY - topRightY) / (vanishX - topRightX)
 	
 	# =============== Top Face ===============
-	
+	#var test2 = ((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
+	#var test = topLeftY − vanishY / leftSlope - topLeftX * -1
 	# TODO - put this in a method to find the damn point
-	var leftMathPoint = Vector2((((topLeftY − vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
-	var rightMathPoint = Vector2((((topRightY − vanishY) / rightSlope) - topRightX) * -1, topRightY - blockDepth)
-	
+	var leftMathPoint = Vector2((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
+	var rightMathPoint = Vector2((((topRightY - vanishY) / rightSlope) - topRightX) * -1, topRightY - blockDepth)
+
 	var tpointArray = [topLeftPoint, leftMathPoint, rightMathPoint, topRightPoint]
+	
+	print(fpointArray)
+	print(tpointArray)
 	
 	draw_polygon(tpointArray, _colorarray, _uvs, _texture)
 	
 	# =============== Left Face ===============
 	# Check if face even shows
-	if(true){
+	if(true):
 		var placeh = "aasda"
-	}
 	
 	# =============== Right Face ===============
 	# Check if face even shows
-	if(true){
+	if(true):
 		var placehoo = "ddasd"
-	}
 	
 	# =============== Bottom Wall ===============
 	# 	Bottom of wall
