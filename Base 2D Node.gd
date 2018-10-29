@@ -43,6 +43,11 @@ func _ready():
 	
 	pass
 
+# Main Method
+fun _process(delta):
+	update()
+
+# TODO: deltatime
 func _draw():
 	# Line args:
 	#	draw_line ( Vector2 from, Vector2 to, Color color, float width=1.0, bool antialiased=false 
@@ -68,9 +73,6 @@ func _draw():
 	var sideVolume = 20
 	var green = Color(0, 255, 0)
 	#var topWidth = 400
-	
-	# already defined dummy
-	#var vanishingPoint = Vector2(screenWidth / 2, )
 	
 	var worldPosition = Vector2(0, 0)
 	
@@ -103,8 +105,8 @@ func _draw():
 	# (x1, y1) is the origin point (x2, y2) is the vanishing point and (x3, y3) is the middle-ish point
 	
 	# Use same slope for top and bot lines to push the 2.5D narrative. Maybe. Play with this!
-	var leftSlope = (vanishY - topLeftY) / (vanishX - topLeftX)
-	var rightSlope = (vanishY - topRightY) / (vanishX - topRightX)
+	var leftSlope = float((vanishY - topLeftY) / (vanishX - topLeftX))
+	var rightSlope = float((vanishY - topRightY) / (vanishX - topRightX))
 	
 	# =============== Top Face ===============
 	#var test2 = ((((topLeftY - vanishY) / leftSlope) - topLeftX) * -1, topLeftY - blockDepth)
@@ -129,47 +131,6 @@ func _draw():
 	# Check if face even shows
 	if(true):
 		var placehoo = "ddasd"
-	
-	# =============== Bottom Wall ===============
-	# 	Bottom of wall
-	#draw_line(Vector2(midPoint - (botWidth / 2), 500), 
-	#Vector2(midPoint + (botWidth / 2), 500), green, 1)
-	
-	# 	Top of wall
-	#draw_line(Vector2(midPoint - (botWidth / 2), 475), 
-	#Vector2(midPoint + (botWidth / 2), 475), green, 1)
-	
-	#	Inner wall ridge
-	#draw_line(Vector2(midPoint - (botWidth / 2), 465), 
-	#Vector2(midPoint + (botWidth / 2), 465), green, 1)
-	
-	#	Right of wall
-	#draw_line(Vector2(midPoint + (botWidth / 2), 475),
-	#Vector2(midPoint + (botWidth / 2), 500), green, 1)
-	
-	#	Left of wall
-	#draw_line(Vector2(midPoint - (botWidth / 2), 475),
-	#Vector2(midPoint - (botWidth / 2), 500), green, 1)
-	
-	# =============== Left Wall ===============
-	#	Outer ridge
-	#draw_line(Vector2(midPoint - (botWidth / 2), 475), 
-	#Vector2(midPoint - (botWidth / 2), 475 - sideWidth), green, 1)
-	
-	#	Inner ridge
-	#draw_line(Vector2(midPoint - (botWidth / 2) + sideVolume, 475), 
-	#Vector2(midPoint - (botWidth / 2) + sideVolume, 475 - sideWidth), green, 1)
-	
-	# =============== Right Wall ===============
-	#	Outer ridge
-	#draw_line(Vector2(midPoint + (botWidth / 2), 475), 
-	#Vector2(midPoint + (botWidth / 2), 475 - sideWidth), green, 1)
-	
-	#	Inner ridge
-	#draw_line(Vector2(midPoint + (botWidth / 2) - sideVolume, 475), 
-	#Vector2(midPoint + (botWidth / 2) - sideVolume, 475 - sideWidth), green, 1)
-	
-	# =============== Top Wall ===============
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
